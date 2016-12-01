@@ -27,7 +27,7 @@ $.extend($.easing,
 
         //attatch click listeners
     	navItems.on('click', function(event){
-    		event.preventDefault();
+   // 		event.preventDefault();
             var navID = $(this).attr("href").substring(1);
             disableScrollFn = true;
             activateNav(navID);
@@ -59,7 +59,8 @@ $.extend($.easing,
         navItems.each(function(){
             var scrollID = $(this).attr('href').substring(1);
             navs[scrollID] = (settings.activateParentNode)? this.parentNode : this;
-            sections[scrollID] = $(document.getElementById(scrollID)).offset().top;
+		if ($(document.getElementById(scrollID)) != null && $(document.getElementById(scrollID)).offset() !=null)
+		            sections[scrollID] = $(document.getElementById(scrollID)).offset().top;
         });
     }
 

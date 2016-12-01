@@ -16,16 +16,17 @@
 </head>
 <body>
   <div id="main">
-
     <nav>
       <ul>
       {% for node in site.posts reversed %}
         {% capture id %}{{ node.id | remove:'/' | downcase }}{% endcapture %}
         <li class="p-{{id}}"><a href="#{{id}}">{{node.title}}</a></li>
       {% endfor %}
-	<li class="p-slides"><a href="/mainSlides/">Slides</a></li>
+      <li class="p-intro"> <a href="/test">Slides</a> </li>
+	
       <li class="p-univ"><img height="10%" width="10%" src="../img/logo_rennes1.gif"></li>
-    </ul></nav>
+    </ul>
+</nav>
 
 
     {% for page in site.posts reversed %}
